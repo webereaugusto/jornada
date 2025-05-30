@@ -352,6 +352,7 @@ body {
     transition: all 0.3s ease;
     border: 1px solid rgba(0,0,0,0.05);
     box-sizing: border-box;
+    padding-top: 10px;
   }
   .speaker-card:hover {
     transform: translateY(-2px);
@@ -1261,5 +1262,33 @@ body {
 
   .speaker-lightbox-info {
     text-align: left;
+  }
+}
+
+@media (max-width: 768px) {
+  .speaker-lightbox-content {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .speaker-lightbox-content img {
+    display: none; /* Esconde a imagem no mobile */
+  }
+
+  .speaker-lightbox-info {
+    text-align: left;
+    width: 100%; /* Garante que o texto ocupe toda a largura */
+    padding: 0 15px; /* Adiciona um pouco de padding nas laterais */
+  }
+
+  .speaker-lightbox-info h3 {
+    font-size: 20px; /* Ajusta o tamanho do título para mobile */
+    margin-bottom: 12px;
+  }
+
+  .speaker-lightbox-info p {
+    font-size: 15px; /* Ajusta o tamanho do texto para mobile */
+    line-height: 1.5;
   }
 } 
