@@ -457,6 +457,105 @@ body {
     position: static !important;
     margin-top: 6px;
   }
+
+  .ingressos-section .ingresso-card,
+  .ingressos-section .ingresso-card-pix {
+    background-color: #fff !important; /* FORÇA fundo branco para cards normais no mobile */
+    color: #222 !important; /* FORÇA cor de texto escura para cards normais no mobile */
+    padding: 25px 15px !important; /* Padding interno mais equilibrado */
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1) !important; /* Sombra sutil */
+  }
+
+  .ingressos-section .ingresso-card-pix {
+    background-color: #f02424 !important; /* FORÇA fundo vermelho para card PIX no mobile */
+    color: #fff !important; /* FORÇA cor de texto branca para card PIX no mobile */
+    border-color: #f02424 !important;
+  }
+
+  /* Garante que os labels dos cards tenham cor de texto visível no mobile */
+  .ingressos-section .ingresso-card .ingresso-card-label {
+    color: #ff6c00 !important; 
+  }
+  .ingressos-section .ingresso-card-pix .ingresso-card-label {
+    color: #fff !important; /* Label do card PIX (DESCONTO PARA PIX) em branco */
+    background-color: #d02020 !important; /* Fundo um pouco mais escuro para o label do PIX para contraste */
+    width: 100%;
+    padding: 8px 0 !important;
+    margin-bottom: 20px !important;
+    position: relative; /* Se antes era absoluto para o selo, resetamos */
+    top: auto; left: auto; transform: none;
+    border-radius: 0; /* Sem borda arredondada para o label */
+  }
+  
+  /* Preços nos cards normais (mobile) */
+  .ingressos-section .ingresso-card .ingresso-card-preco {
+    color: #ff6c00 !important;
+  }
+  .ingressos-section .ingresso-card .ingresso-card-preco span.preco-valor {
+    color: #ff6c00 !important;
+    font-size: 2.8rem !important; 
+  }
+
+  /* Descrição nos cards normais (mobile) */
+  .ingressos-section .ingresso-card .ingresso-card-desc {
+    color: #555 !important;
+    font-size: 0.95rem !important;
+  }
+
+  /* Botão nos cards normais (mobile) */
+  .ingressos-section .ingresso-card .ingresso-card-link {
+    background-color: #ff6c00 !important;
+    color: #fff !important;
+    font-size: 1rem !important;
+    padding: 12px 20px !important;
+  }
+  
+  /* Preços no card PIX (mobile) */
+  .ingressos-section .ingresso-card-pix .ingresso-card-pix-preco {
+    color: #fff !important;
+  }
+  .ingressos-section .ingresso-card-pix .ingresso-card-pix-preco span.preco-valor {
+    color: #fff !important;
+    font-size: 3rem !important; 
+  }
+
+  /* Descrição no card PIX (mobile) */
+  .ingressos-section .ingresso-card-pix .ingresso-card-desc {
+    color: #eee !important;
+    font-size: 0.95rem !important;
+  }
+
+  /* Botão no card PIX (mobile) */
+  .ingressos-section .ingresso-card-pix .ingresso-card-link {
+    background-color: #fff !important;
+    color: #f02424 !important;
+    font-size: 1rem !important;
+    padding: 12px 20px !important;
+  }
+
+  .ingressos-cards-wrapper,
+  .ingressos-cards-row {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 10px !important;
+    margin: 0 auto !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 24px !important;
+  }
+  .ingresso-card, .ingresso-card-pix {
+    width: 100% !important;
+    max-width: 400px !important;
+    min-width: 0 !important;
+    margin: 0 auto !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
 }
 
 @media (min-width: 701px) {
@@ -1291,4 +1390,982 @@ body {
     font-size: 15px; /* Ajusta o tamanho do texto para mobile */
     line-height: 1.5;
   }
-} 
+}
+
+/* ========== INGRESSOS ESTILO CLEAN CARDS - FUNDO ESCURO TEXTURIZADO ========== */
+.ingressos-section {
+  width: 100vw;
+  min-height: 100vh;
+  background-color: #B71C1C; /* Vermelho mais escuro */
+  background-image: repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.07) 0, rgba(255, 255, 255, 0.07) 1px, transparent 1px, transparent 16px),
+                    repeating-linear-gradient(-45deg, rgba(255, 255, 255, 0.07) 0, rgba(255, 255, 255, 0.07) 1px, transparent 1px, transparent 16px);
+  background-size: 32px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 60px 0 80px 0;
+  box-sizing: border-box;
+}
+.ingressos-title {
+  color: #fff;
+  font-size: 4.42rem; /* 2.6rem + 70% = 4.42rem */
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 48px;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+}
+.ingressos-cards-wrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.ingressos-cards-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  gap: 32px;
+  flex-wrap: nowrap;
+}
+.ingresso-card, .ingresso-card-pix {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+  min-width: 300px;
+  max-width: 360px;
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  padding: 44px 32px 36px 32px;
+  box-sizing: border-box;
+  transition: box-shadow 0.18s, transform 0.18s;
+  color: #222;
+  overflow: hidden;
+}
+.ingresso-card-pix {
+  background-color: #f02424; /* Novo fundo vermelho para o card PIX */
+  border-color: #f02424; /* Borda na mesma cor do fundo, ou pode ser removida/ajustada */
+  color: #fff; /* Cor padrão do texto dentro do card PIX para branco */
+}
+.ingresso-card:hover, .ingresso-card-pix:hover {
+  box-shadow: 0 16px 48px rgba(255,108,0,0.13);
+  transform: translateY(-6px) scale(1.03);
+}
+.ingresso-card-label {
+  width: 100%;
+  text-align: center;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #ff6c00;
+  margin-bottom: 18px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+.ingresso-card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.ingresso-card-preco {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #ff6c00;
+  margin-bottom: 10px;
+  margin-top: 12px;
+  letter-spacing: 1px;
+}
+.ingresso-card-desc {
+  color: #888;
+  font-size: 1.08rem;
+  margin-bottom: 22px;
+  font-weight: 500;
+}
+.ingresso-card-link, .ingresso-card-pix-link {
+  display: inline-block;
+  background: #ff6c00;
+  color: #fff;
+  font-weight: 900;
+  font-size: 1.13rem;
+  text-decoration: none;
+  border: none;
+  padding: 13px 38px;
+  margin-top: 18px;
+  letter-spacing: 1px;
+  transition: background 0.18s, color 0.18s, transform 0.15s;
+  cursor: pointer;
+  text-align: center;
+  outline: none;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(255,108,0,0.08);
+}
+.ingresso-card-link:hover, .ingresso-card-pix-link:hover {
+  background: #fff;
+  color: #ff6c00;
+  border: 1.5px solid #ff6c00;
+  transform: scale(1.04);
+}
+.ingresso-card-pix-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 0;
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+}
+.ingresso-card-pix-label {
+  position: absolute;
+  top: -32px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ff6c00;
+  color: #fff;
+  font-size: 1.12rem;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 7px 32px;
+  z-index: 3;
+  box-shadow: 0 2px 8px rgba(255,108,0,0.10);
+  border-radius: 8px;
+  gap: 8px;
+}
+.ingresso-card-pix-label i {
+  color: #fff;
+  font-size: 1.2em;
+  margin-right: 4px;
+}
+.ingresso-card-pix-preco {
+  font-size: 4.5rem;
+  font-weight: 900;
+  color: #ff6c00;
+  margin-bottom: 10px;
+  margin-top: 12px;
+  letter-spacing: 1px;
+}
+.pix-avista {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #222;
+  margin-left: 10px;
+}
+.ingresso-card-pix-desc {
+  color: #888;
+  font-size: 1.08rem;
+  margin-bottom: 22px;
+  margin-top: 10px;
+  font-weight: 500;
+}
+@media (max-width: 1100px) {
+  .ingressos-cards-row {
+    gap: 18px;
+  }
+  .ingresso-card, .ingresso-card-pix {
+    min-width: 240px;
+    max-width: 98vw;
+    flex: 1 1 240px;
+  }
+}
+@media (max-width: 900px) {
+  .ingressos-cards-row {
+    flex-wrap: wrap;
+  }
+  .ingresso-card, .ingresso-card-pix {
+    min-width: 320px;
+    max-width: 98vw;
+    flex: 1 1 320px;
+  }
+}
+@media (max-width: 700px) {
+  .ingressos-section {
+    padding: 36px 0 36px 0;
+  }
+  .ingressos-title {
+    font-size: 1.5rem;
+    margin-bottom: 28px;
+  }
+  .ingressos-cards-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza os cards na coluna */
+    gap: 30px; /* Espaço vertical entre os cards empilhados */
+    width: 100%; /* Ocupa a largura disponível */
+    padding: 0 15px; /* Pequeno padding lateral para não colar nas bordas da tela */
+    box-sizing: border-box;
+  }
+  .ingresso-card, .ingresso-card-pix {
+    width: 100%; /* Cards ocupam a largura do container pai (que tem padding) */
+    max-width: 450px; /* Limite máximo de largura para os cards */
+    margin-left: auto;
+    margin-right: auto;
+    padding: 25px 20px; /* Padding interno dos cards ajustado para mobile */
+    box-sizing: border-box;
+  }
+  
+  /* Ajuste no tamanho da fonte do preço principal nos cards normais para mobile */
+  .ingresso-card .ingresso-card-preco span.preco-valor {
+      font-size: 3rem !important; 
+  }
+  .ingresso-card .ingresso-card-preco {
+      font-size: 1.5rem !important;
+  }
+
+  /* Ajuste no tamanho da fonte do preço principal no card PIX para mobile */
+  .ingresso-card-pix .ingresso-card-pix-preco span.preco-valor {
+      font-size: 3.5rem !important; 
+  }
+   .ingresso-card-pix .ingresso-card-pix-preco {
+      font-size: 1.5rem !important;
+  }
+
+  .ingresso-card-label, .ingresso-card-pix-label {
+    font-size: 0.95rem;
+    height: 32px;
+    padding: 0;
+  }
+  .ingresso-card-pix-label {
+    top: -16px;
+  }
+  .ingresso-card-pix-preco {
+    font-size: 2rem;
+  }
+  .pix-avista {
+    font-size: 1rem;
+  }
+}
+/* ========== FIM INGRESSOS ESTILO CLEAN CARDS ========== */
+
+/* ========== FIM INGRESSOS ESTILO CLEAN CARDS ========== */
+
+/* ========== FIM INGRESSOS ESTILO PREMIUM ========== */
+
+/* ========== CRONÔMETRO E FRASE PROMOCIONAL ========== */
+.countdown-timer-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 15px;
+  margin-top: -15px; /* Para aproximar do título */
+}
+
+.countdown-item {
+  text-align: center;
+}
+
+.countdown-value {
+  display: block;
+  font-size: 2.8rem; /* Tamanho grande para os números */
+  color: #fff; /* Números em branco */
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.countdown-label {
+  display: block;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8); /* Labels com leve transparência */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.promo-text {
+  color: #ffe066; /* Amarelo claro para destaque */
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 40px;
+  letter-spacing: 0.5px;
+}
+
+@media (max-width: 700px) {
+  .countdown-timer-wrapper {
+    gap: 15px;
+    margin-top: -10px;
+  }
+  .countdown-value {
+    font-size: 2rem;
+  }
+  .countdown-label {
+    font-size: 0.75rem;
+  }
+  .promo-text {
+    font-size: 1rem;
+    margin-bottom: 30px;
+  }
+}
+/* ========== FIM CRONÔMETRO E FRASE PROMOCIONAL ========== */
+
+/* ========== AJUSTES CARDS DE INGRESSO (MAIÚSCULAS E TAMANHO VALOR) ========== */
+.ingresso-card .ingresso-card-label,
+.ingresso-card .ingresso-card-desc,
+.ingresso-card .ingresso-card-link,
+.ingresso-card-pix .ingresso-card-label,
+.ingresso-card-pix .ingresso-card-pix-desc,
+.ingresso-card-pix .ingresso-card-link {
+  text-transform: uppercase; /* Tudo em maiúsculas dentro dos cards */
+}
+
+.ingresso-card-preco .preco-valor,
+.ingresso-card-pix-preco .preco-valor {
+  font-size: 3.8rem; /* Aumenta o tamanho apenas do valor R$99 / R$997 */
+  font-weight: 900;
+  letter-spacing: -1px;
+}
+
+.ingresso-card-preco,
+.ingresso-card-pix-preco {
+  font-size: 1.8rem; /* Tamanho para o texto restante como '12x de' */
+  font-weight: 700; /* Peso da fonte para o texto restante */
+  display: flex;
+  align-items: baseline; /* Alinha '12x de' com a base do valor maior */
+  justify-content: center;
+  gap: 5px; /* Pequeno espaço entre '12x de' e 'R$99' */
+}
+
+.ingresso-card-pix .ingresso-card-label {
+  color: #ff6c00; /* Garante que o título do card PIX também seja laranja */
+  position: relative;
+  top: auto;
+  left: auto;
+  transform: none;
+  background: none;
+  box-shadow: none;
+  padding: 0;
+  margin-bottom: 18px; /* Espaçamento padrão do label do card */
+}
+
+.ingresso-card-pix-preco .pix-avista-detalhe {
+  display: none; /* Esconde o antigo span se ainda houver alguma referência */
+}
+
+.ingresso-card-pix .ingresso-card-desc {
+  /* Garante que a descrição do PIX siga o padrão dos outros cards */
+  /* A regra de text-transform: uppercase já é aplicada globalmente para os cards */
+  color: #888; /* Mesma cor da descrição dos outros cards */
+  font-size: 1.08rem; /* Mesmo tamanho da descrição dos outros cards */
+  font-weight: 500; /* Mesmo peso da descrição dos outros cards */
+  margin-bottom: 22px; /* Mesma margem inferior */
+  margin-top: 10px; /* Ajustar margem superior para ficar bom abaixo do preço grande */
+}
+
+/* Certifica que o card PIX não tenha o selo flutuante antigo */
+.ingresso-card-pix-label {
+    display: none; /* Esconde o antigo label flutuante de melhor oferta */
+}
+
+/* ========== FIM INGRESSOS ESTILO PREMIUM ========== */
+
+/* Reflexo sutil no estado parado */
+.ingresso-card::before, .ingresso-card-pix::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 150px; /* Largura do reflexo */
+  height: 100%; 
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.0) 30%, /* Ajuste para um brilho mais contido no início */
+    rgba(255, 255, 255, 0.15) 45%, /* Pico do brilho */
+    rgba(255, 255, 255, 0.0) 60%, /* Ajuste para um brilho mais contido no final */
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: translateX(-100px) skewX(-20deg); /* Posição inicial e inclinação */
+  opacity: 0.6; /* Opacidade do reflexo */
+  pointer-events: none; /* Para não interferir com cliques */
+  transition: opacity 0.3s ease;
+}
+
+/* Efeito de Luz Deslizando no Hover */
+.ingresso-card::after, .ingresso-card-pix::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -150%; /* Começa completamente fora à esquerda */
+  width: 70%;   /* Largura da faixa de luz */
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.25) 50%, /* Luz branca com opacidade */
+    transparent 100%
+  );
+  transform: skewX(-25deg); /* Inclinação da faixa de luz */
+  transition: left 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Transição suave para o movimento */
+  pointer-events: none;
+}
+
+.ingresso-card:hover::after, .ingresso-card-pix:hover::after {
+  left: 150%; /* Move a luz para completamente fora à direita */
+}
+
+/* Ajuste na sombra e borda do card PIX no hover para intensificar o destaque */
+.ingresso-card-pix:hover {
+  background-color: #f02424 !important; /* FORÇA o fundo vermelho original */
+  border-color: #f02424 !important;     /* FORÇA a borda vermelha original */
+  /* Mantém a transformação (subida/escala) do hover geral, mas sobrescreve a sombra */
+  box-shadow: 0 10px 35px rgba(183, 28, 28, 0.3) !important; /* Sombra vermelha sutil para o hover */
+}
+
+/* Remove o reflexo ::before durante o hover para não sobrepor o shine ::after */
+.ingresso-card:hover::before, .ingresso-card-pix:hover::before {
+    opacity: 0;
+}
+
+/* Estado do BOTÃO dentro do CARD PIX quando o MOUSE ESTÁ SOBRE O CARD */
+.ingresso-card-pix:hover .ingresso-card-link {
+  background-color: #fff !important;       /* FORÇA o fundo do botão branco */
+  color: #f02424 !important;              /* FORÇA o texto do botão vermelho */
+  border-color: #f02424 !important;       /* FORÇA a borda do botão vermelha */
+  /* transform: none !important; */       /* Opcional: remove a escala do botão se desejar */
+}
+
+/* Estado HOVER do BOTÃO dentro do CARD PIX quando o MOUSE ESTÁ SOBRE O BOTÃO */
+.ingresso-card-pix .ingresso-card-link:hover {
+  background-color: #fff !important;       /* FORÇA o fundo do botão branco */
+  color: #f02424 !important;              /* FORÇA o texto do botão vermelho */
+  border-color: #f02424 !important;       /* FORÇA a borda do botão vermelha */
+  /* transform: none !important; */       /* Opcional: remove a escala do botão se desejar */
+}
+
+@keyframes SutilMovimentoTextura {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 40px 40px; /* Move a textura em um ciclo completo do padrão */
+  }
+}
+
+/* ========== CORES PERSONALIZADAS CARD PIX ========== */
+.ingresso-card-pix {
+  background-color: #f02424; /* Novo fundo vermelho para o card PIX */
+  border-color: #f02424; /* Borda na mesma cor do fundo, ou pode ser removida/ajustada */
+  color: #fff; /* Cor padrão do texto dentro do card PIX para branco */
+}
+
+.ingresso-card-pix .ingresso-card-label, /* Título 'DESCONTO PARA PIX' */
+.ingresso-card-pix .ingresso-card-pix-preco .preco-valor, /* Valor R$997 */
+.ingresso-card-pix .ingresso-card-desc, /* Texto 'À VISTA VIA PIX' */
+.ingresso-card-pix .ingresso-card-pix-preco {
+  color: #fff; /* Todos esses textos em branco */
+}
+
+.ingresso-card-pix .ingresso-card-link {
+  background-color: #fff; /* Fundo do botão CLIQUE AQUI branco */
+  color: #f02424; /* Texto do botão CLIQUE AQUI em vermelho */
+  border: 1.5px solid #f02424; /* Adiciona uma borda vermelha sutil ao botão branco */
+}
+
+.ingresso-card-pix:hover {
+  background-color: #d02020; /* Um tom de vermelho um pouco mais escuro no hover */
+  border-color: #d02020;
+  box-shadow: 0 8px 32px rgba(240, 36, 36, 0.25); /* Sombra um pouco mais pronunciada e avermelhada */
+}
+
+.ingresso-card-pix:hover .ingresso-card-link {
+  background-color: #f02424; /* Fundo do botão volta para vermelho no hover do card */
+  color: #fff; /* Texto do botão volta para branco no hover do card */
+  border-color: #fff;
+}
+
+/* Remover ou ajustar o hover individual do botão PIX se ele estiver causando conflito */
+.ingresso-card-pix .ingresso-card-link:hover {
+    /* Se o card PIX não muda cor no hover, o botão dentro dele também não deveria mudar ao passar o mouse diretamente sobre o botão. */
+    /* Portanto, podemos resetar ou garantir que ele mantenha o estado normal. */
+    background-color: #fff !important; 
+    color: #f02424 !important;
+    border-color: #f02424 !important;
+    /* transform: scale(1.0); // Remove a escala individual do botão se desejado */
+}
+
+/* Remover o reflexo e o brilho branco se não combinarem com o fundo vermelho */
+.ingresso-card-pix::before, .ingresso-card-pix::after {
+  /* background: none; */ /* Opção 1: Remover completamente */
+  opacity: 0.05; /* Opção 2: Reduzir drasticamente a opacidade para um efeito muito sutil */
+}
+
+/* Aumentar fonte do preço no card PIX (MAIS ESPECÍFICO) */
+.ingressos-section .ingresso-card-pix .ingresso-card-pix-preco span.preco-valor {
+  font-size: 4.5rem !important; /* Aumento de ~20% e !important para garantir */
+}
+
+/* Manter o texto '12x de' e similar em um tamanho proporcional no card PIX também */
+.ingressos-section .ingresso-card-pix .ingresso-card-pix-preco {
+    font-size: 1.8rem !important; /* Garante que o resto do texto do preço seja consistente */
+}
+
+/* ========== SECTION LOCAL ========== */
+.local-section {
+  width: 100vw;
+  background: #fff;
+  padding: 60px 0 40px 0;
+  text-align: center;
+}
+.local-title {
+  color: #ff3c22;
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 36px;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+}
+.local-gallery {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 48px;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+.local-gallery img {
+  width: 340px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 6px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  background: #eee;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.local-gallery img:hover {
+  transform: scale(1.04);
+  box-shadow: 0 8px 32px rgba(255,60,34,0.13);
+}
+@media (max-width: 1100px) {
+  .local-gallery {
+    gap: 24px;
+  }
+  .local-gallery img {
+    width: 260px;
+    height: 160px;
+  }
+}
+@media (max-width: 800px) {
+  .local-title {
+    font-size: 2rem;
+  }
+  .local-gallery {
+    gap: 12px;
+  }
+  .local-gallery img {
+    width: 160px;
+    height: 100px;
+  }
+}
+@media (max-width: 600px) {
+  .local-section {
+    padding: 36px 0 24px 0;
+  }
+  .local-title {
+    font-size: 1.3rem;
+    margin-bottom: 18px;
+  }
+  .local-gallery {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+  .local-gallery img {
+    width: 90vw;
+    max-width: 320px;
+    height: 120px;
+  }
+}
+
+/* ========== SECTION PATROCINADORES ========== */
+.patrocinadores-section {
+  width: 100vw;
+  background: #fafafa;
+  padding: 48px 0 36px 0;
+  text-align: center;
+}
+.patrocinadores-title {
+  color: #ff3c22;
+  font-size: 2.6rem;
+  font-weight: 700;
+  margin-bottom: 36px;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+}
+.patrocinadores-logos {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 48px;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  max-width: 1400px;
+}
+.patro-logo-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 160px;
+  max-width: 220px;
+  margin: 0 8px;
+}
+.patro-logo-item img {
+  max-width: 180px;
+  max-height: 70px;
+  width: auto;
+  height: auto;
+  margin-bottom: 12px;
+  object-fit: contain;
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  padding: 4px 8px;
+}
+.patro-logo-label {
+  color: #ff3c22;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-top: 2px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+@media (max-width: 1100px) {
+  .patrocinadores-logos {
+    gap: 24px;
+  }
+  .patro-logo-item img {
+    max-width: 120px;
+    max-height: 50px;
+  }
+}
+@media (max-width: 700px) {
+  .patrocinadores-title {
+    font-size: 1.5rem;
+    margin-bottom: 18px;
+  }
+  .patrocinadores-logos {
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .patro-logo-item {
+    min-width: 100px;
+    max-width: 140px;
+  }
+  .patro-logo-item img {
+    max-width: 90px;
+    max-height: 36px;
+    padding: 2px 4px;
+  }
+  .patro-logo-label {
+    font-size: 0.8rem;
+  }
+}
+
+/* ===== FOOTER JORNADA ===== */
+.footer-jornada {
+  width: 100vw;
+  background: #000;
+  padding: 60px 0 30px 0;
+  text-align: center;
+  margin-top: 0;
+}
+.footer-content {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+}
+.footer-logo {
+  width: 90px;
+  margin-bottom: 0;
+}
+.footer-btn-lote {
+  background: #ff3c22;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.1rem;
+  padding: 16px 48px;
+  border: none;
+  border-radius: 4px;
+  margin: 0 auto 0 auto;
+  cursor: pointer;
+  margin-bottom: 0;
+  margin-top: 0;
+  transition: background 0.2s;
+  letter-spacing: 1px;
+  box-shadow: 0 2px 8px rgba(255,60,34,0.10);
+  text-transform: uppercase;
+}
+.footer-btn-lote:hover {
+  background: #ff6c00;
+}
+.footer-politica {
+  color: #fff;
+  font-size: 1rem;
+  margin: 0;
+  font-weight: 400;
+}
+.footer-link {
+  color: #ff6c00;
+  text-decoration: underline;
+  font-weight: 500;
+}
+.footer-link:hover {
+  color: #ffe066;
+}
+.footer-copyright {
+  color: #aaa;
+  font-size: 0.95rem;
+  margin-top: 18px;
+  margin-bottom: 0;
+}
+@media (max-width: 700px) {
+  .footer-jornada {
+    padding: 36px 0 18px 0;
+  }
+  .footer-content {
+    gap: 18px;
+  }
+  .footer-logo {
+    width: 60px;
+  }
+  .footer-btn-lote {
+    font-size: 0.95rem;
+    padding: 12px 18px;
+  }
+  .footer-politica {
+    font-size: 0.85rem;
+  }
+  .footer-copyright {
+    font-size: 0.8rem;
+  }
+}
+
+/* ===== BOTÃO VOLTAR AO TOPO ===== */
+.btn-voltar-topo {
+  position: fixed;
+  right: 32px;
+  bottom: 32px;
+  z-index: 9999;
+  background: #fff;
+  border: 1.5px solid #ff6c00;
+  border-radius: 6px;
+  box-shadow: 0 2px 12px rgba(255,108,0,0.13);
+  width: 44px;
+  height: 44px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: box-shadow 0.2s, border 0.2s;
+  padding: 0;
+}
+.btn-voltar-topo svg {
+  display: block;
+  margin: 0 auto;
+}
+.btn-voltar-topo:hover {
+  box-shadow: 0 4px 24px rgba(255,108,0,0.22);
+  border-color: #ff3c22;
+}
+@media (max-width: 700px) {
+  .btn-voltar-topo {
+    right: 12px;
+    bottom: 12px;
+    width: 36px;
+    height: 36px;
+  }
+}
+
+/* ===== PRÉ-FOOTER VERMELHO ===== */
+.prefooter-vermelho {
+  width: 100vw;
+  background: #ff3c22;
+  padding: 80px 0 80px 0;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.prefooter-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+.prefooter-btn-lote {
+  background: #ffd600;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.5rem;
+  padding: 22px 70px;
+  border: none;
+  border-radius: 4px;
+  margin: 0 auto 0 auto;
+  cursor: pointer;
+  margin-bottom: 0;
+  margin-top: 0;
+  transition: background 0.2s;
+  letter-spacing: 1px;
+  box-shadow: 0 2px 8px rgba(255,214,0,0.10);
+  text-transform: uppercase;
+  display: block;
+}
+.prefooter-btn-lote {
+  color: #fff;
+  background: #ffd600;
+  font-weight: 700;
+  font-size: 1.5rem;
+  border-radius: 2px;
+  border: none;
+  box-shadow: 0 2px 8px rgba(255,214,0,0.10);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: background 0.2s;
+}
+.prefooter-btn-lote:hover {
+  background: #ffe066;
+  color: #ff3c22;
+}
+.prefooter-politica {
+  color: #fff;
+  font-size: 1.1rem;
+  margin: 0;
+  font-weight: 400;
+  margin-top: 18px;
+}
+.prefooter-link {
+  color: #fff;
+  text-decoration: underline;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.prefooter-link:hover {
+  color: #ffd600;
+}
+@media (max-width: 700px) {
+  .prefooter-vermelho {
+    padding: 40px 0 40px 0;
+  }
+  .prefooter-btn-lote {
+    font-size: 1.05rem;
+    padding: 14px 18px;
+  }
+  .prefooter-politica {
+    font-size: 0.9rem;
+  }
+  .prefooter-content {
+    gap: 18px;
+  }
+}
+
+@media (max-width: 700px) {
+  /* PATROCINADORES */
+  .patrocinadores-section {
+    padding: 28px 0 18px 0;
+  }
+  .patrocinadores-title {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+    text-align: center;
+  }
+  .patrocinadores-logos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px 8px;
+    justify-content: center;
+    align-items: center;
+    max-width: 98vw;
+    margin: 0 auto;
+    padding: 0 8px;
+  }
+  .patro-logo-item {
+    min-width: unset;
+    max-width: unset;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    padding: 10px 4px 8px 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .patro-logo-item img {
+    max-width: 80px;
+    max-height: 32px;
+    width: auto;
+    height: auto;
+    margin-bottom: 6px;
+    padding: 0;
+    background: none;
+    box-shadow: none;
+  }
+  .patro-logo-label {
+    font-size: 0.7rem;
+    margin-top: 0;
+    color: #ff3c22;
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    text-transform: uppercase;
+  }
+
+  /* PRÉ-FOOTER VERMELHO */
+  .prefooter-vermelho {
+    padding: 28px 0 28px 0;
+  }
+  .prefooter-content {
+    gap: 12px;
+  }
+  .prefooter-btn-lote {
+    font-size: 1.1rem;
+    padding: 12px 0;
+    width: 90vw;
+    max-width: 340px;
+    border-radius: 6px;
+  }
+  .prefooter-politica {
+    font-size: 0.85rem;
+    padding: 0 8px;
+    text-align: center;
+  }
+
+  /* FOOTER JORNADA */
+  .footer-jornada {
+    padding: 18px 0 10px 0;
+  }
+  .footer-content {
+    gap: 10px;
+    max-width: 98vw;
+    padding: 0 8px;
+  }
+  .footer-logo {
+    width: 48px;
+    margin-bottom: 0;
+  }
+  .footer-btn-lote {
+    font-size: 1.1rem;
+    padding: 12px 0;
+    width: 90vw;
+    max-width: 340px;
+    border-radius: 6px;
+  }
+  .footer-politica {
+    font-size: 0.8rem;
+    padding: 0 8px;
+    text-align: center;
+  }
+  .footer-copyright {
+    font-size: 0.7rem;
+    margin-top: 10px;
+    margin-bottom: 0;
+    color: #aaa;
+    text-align: center;
+  }
+}
