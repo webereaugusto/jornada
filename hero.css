@@ -1168,7 +1168,7 @@ body {
 }
 .swiper-pagination-bullet-active {
   opacity: 1;
-  background: #ff4d2d;
+  background: var(--swiper-theme-color);
 }
 
 .speaker-lightbox-content {
