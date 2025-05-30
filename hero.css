@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
+:root {
+  --swiper-theme-color: #ff6c00;
+}
+
 html, body {
   height: 100%;
   margin: 0;
