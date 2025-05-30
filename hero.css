@@ -338,12 +338,12 @@ body {
     background: #fff;
     border-radius: 12px;
     box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-    padding: 16px 8px;
+    padding: 0px 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
-    min-height: 300px;
+    min-height: 240px;
     position: relative;
     transition: all 0.3s ease;
     border: 1px solid rgba(0,0,0,0.05);
@@ -399,7 +399,7 @@ body {
     color: #EF3C2D;
     font-size: 0.9rem;
     font-weight: 500;
-    margin-top: 8px;
+    margin-top: 0px;
     background: #fff;
     border: 1px solid #EF3C2D;
     border-radius: 20px;
@@ -884,7 +884,7 @@ body {
 .speakers-container {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 32px;
+  padding: 0px;
 }
 .speakers-title {
   font-size: 2.8rem;
@@ -1076,6 +1076,7 @@ body {
   .speakers-title {
     font-size: 2rem;
     margin-bottom: 18px;
+    text-align: center;
   }
   .speakers-slider {
     min-height: 340px;
