@@ -1167,8 +1167,14 @@ body {
   transition: opacity 0.3s;
 }
 .swiper-pagination-bullet-active {
-  opacity: 1;
-  background: var(--swiper-theme-color);
+  opacity: 1 !important;
+  background: #ff6c00 !important;
+  transform: scale(1.2);
+}
+
+/* Garantir que a cor seja aplicada mesmo com especificidade maior */
+.swiper-pagination .swiper-pagination-bullet-active {
+  background: #ff6c00 !important;
 }
 
 .speaker-lightbox-content {
