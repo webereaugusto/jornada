@@ -597,7 +597,7 @@ body {
   position: relative;
   width: 100vw;
   min-height: 100vh;
-  background: url('https://jornadapilates.com.br/wp-content/uploads/2022/09/background-slider-jornada-home-1920x800-1.webp') center center/cover no-repeat;
+  background: url('https://jornadapilates.com.br/2026/wp-content/uploads/2025/06/background_jornada2026.jpg') center center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1905,87 +1905,211 @@ body {
 
 /* ========== SECTION LOCAL ========== */
 .local-section {
-  width: 100vw;
-  background: #fff;
-  padding: 60px 0 40px 0;
+  padding: 60px 20px;
+  background: linear-gradient(120deg, #f8fafc 60%, #f3f0ff 100%);
   text-align: center;
-}
-.local-title {
-  color: #ff3c22;
-  font-size: 2.8rem;
-  font-weight: 700;
-  margin-bottom: 36px;
-  font-family: 'Roboto', Arial, Helvetica, sans-serif;
-}
-.local-gallery {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 48px;
-  flex-wrap: wrap;
-  margin: 0 auto;
+  border-radius: 24px;
+  box-shadow: 0 8px 32px rgba(80, 0, 0, 0.08);
+  margin: 60px auto 60px auto;
   max-width: 1200px;
 }
-.local-gallery img {
-  width: 340px;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 6px;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+
+.local-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  gap: 56px;
+  align-items: center;
+  text-align: left;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(80,0,0,0.07);
+  padding: 40px 36px;
+}
+
+.local-logo {
+  max-width: 220px;
+  margin-bottom: 32px;
+  display: block;
+  filter: drop-shadow(0 2px 8px rgba(80,0,0,0.08));
+}
+
+.local-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 18px;
+}
+
+.local-title {
+  font-size: 32px;
+  color: #333;
+  margin-bottom: 40px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.local-address {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.local-description {
+  font-size: 16.5px;
+  line-height: 1.7;
+  color: #444;
+  margin-bottom: 10px;
+}
+
+.local-highlights {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #444;
+  margin-bottom: 18px;
+}
+
+.local-link {
+  display: inline-block;
+  padding: 13px 34px;
+  background-color: #ff6c00;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 7px;
+  font-weight: 700;
+  font-size: 1.08rem;
+  box-shadow: 0 2px 8px rgba(255,108,0,0.08);
+  transition: background-color 0.3s, box-shadow 0.3s;
+  margin-top: 10px;
+}
+
+.local-link:hover {
+  background-color: #e55c00;
+  box-shadow: 0 4px 16px rgba(255,108,0,0.13);
+}
+
+.local-image {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.local-slider {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  min-height: 260px;
+  aspect-ratio: 4/3;
+  margin: 0 auto 18px auto;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.10);
   background: #eee;
-  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.local-gallery img:hover {
-  transform: scale(1.04);
-  box-shadow: 0 8px 32px rgba(255,60,34,0.13);
+.local-slide {
+  position: absolute;
+  top: 0; left: 0; width: 100% !important; height: 100% !important;
+  min-width: 100%; min-height: 100%; max-width: 100%; max-height: 100%;
+  display: block;
+  margin: 0 auto;
+  opacity: 0;
+  transition: opacity 0.7s cubic-bezier(.4,0,.2,1);
+  object-fit: cover;
+  border-radius: 16px;
+  z-index: 1;
+  pointer-events: none;
+  box-shadow: 0 2px 8px rgba(80,0,0,0.07);
 }
+.local-slide.active {
+  opacity: 1;
+  z-index: 2;
+  pointer-events: auto;
+}
+
+/* Indicadores do slider */
+.local-slider-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+.local-slider-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #ff6c00;
+  opacity: 0.25;
+  transition: opacity 0.3s, transform 0.3s;
+  cursor: pointer;
+}
+.local-slider-indicator.active {
+  opacity: 1;
+  transform: scale(1.18);
+  box-shadow: 0 2px 8px rgba(255,108,0,0.13);
+}
+
 @media (max-width: 1100px) {
-  .local-gallery {
+  .local-content {
     gap: 24px;
-  }
-  .local-gallery img {
-    width: 260px;
-    height: 160px;
+    padding: 30px 10px;
   }
 }
-@media (max-width: 800px) {
-  .local-title {
-    font-size: 2rem;
-  }
-  .local-gallery {
-    gap: 12px;
-  }
-  .local-gallery img {
-    width: 160px;
-    height: 100px;
-  }
-}
-@media (max-width: 600px) {
+@media (max-width: 900px) {
   .local-section {
-    padding: 36px 0 24px 0;
+    margin: 30px 0 30px 0;
+    border-radius: 14px;
+  }
+  .local-content {
+    flex-direction: column;
+    gap: 18px;
+    padding: 18px 4vw;
+  }
+  .local-slider {
+    max-width: 98vw;
+    min-height: 180px;
+    border-radius: 12px;
+  }
+}
+@media (max-width: 768px) {
+  .local-section {
+    padding: 24px 0;
+    border-radius: 8px;
   }
   .local-title {
-    font-size: 1.3rem;
-    margin-bottom: 18px;
+    font-size: 24px;
+    margin-bottom: 24px;
   }
-  .local-gallery {
-    flex-direction: column;
-    align-items: center;
-    gap: 16px;
+  .local-logo {
+    max-width: 140px;
+    margin-bottom: 12px;
   }
-  .local-gallery img {
-    width: 90vw;
-    max-width: 320px;
-    height: 120px;
+  .local-content {
+    padding: 10px 2vw;
+    border-radius: 8px;
+  }
+  .local-slider {
+    max-width: 100vw;
+    min-height: 120px;
+    aspect-ratio: 4/3;
+    border-radius: 8px;
   }
 }
 
 /* ========== SECTION PATROCINADORES ========== */
 .patrocinadores-section {
-  width: 100vw;
+  width: 100%;
   background: #fafafa;
   padding: 48px 0 36px 0;
   text-align: center;
+  margin-top: 0;
 }
 .patrocinadores-title {
   color: #ff3c22;
@@ -2065,7 +2189,7 @@ body {
 
 /* ===== FOOTER JORNADA ===== */
 .footer-jornada {
-  width: 100vw;
+  width: 100%;
   background: #000;
   padding: 60px 0 30px 0;
   text-align: center;
@@ -2078,6 +2202,7 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 28px;
+  padding: 0 20px;
 }
 .footer-logo {
   width: 90px;
@@ -2091,17 +2216,16 @@ body {
   padding: 16px 48px;
   border: none;
   border-radius: 4px;
-  margin: 0 auto 0 auto;
   cursor: pointer;
-  margin-bottom: 0;
-  margin-top: 0;
-  transition: background 0.2s;
-  letter-spacing: 1px;
-  box-shadow: 0 2px 8px rgba(255,60,34,0.10);
+  transition: all 0.3s ease;
   text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 2px 8px rgba(255,60,34,0.15);
 }
 .footer-btn-lote:hover {
   background: #ff6c00;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255,60,34,0.25);
 }
 .footer-politica {
   color: #fff;
@@ -2125,17 +2249,19 @@ body {
 }
 @media (max-width: 700px) {
   .footer-jornada {
-    padding: 36px 0 18px 0;
+    padding: 40px 0 20px 0;
   }
   .footer-content {
-    gap: 18px;
+    gap: 20px;
   }
   .footer-logo {
     width: 60px;
   }
   .footer-btn-lote {
-    font-size: 0.95rem;
-    padding: 12px 18px;
+    font-size: 1rem;
+    padding: 14px 20px;
+    width: 90%;
+    max-width: 340px;
   }
   .footer-politica {
     font-size: 0.85rem;
@@ -2183,19 +2309,19 @@ body {
 
 /* ===== PRÉ-FOOTER VERMELHO ===== */
 .prefooter-vermelho {
-  width: 100vw;
+  width: 100%;
   background: #ff3c22;
-  padding: 80px 0 80px 0;
+  padding: 60px 0;
   text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  margin-top: 0;
 }
 .prefooter-content {
+  max-width: 600px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 32px;
+  gap: 24px;
 }
 .prefooter-btn-lote {
   background: #ffd600;
@@ -2205,31 +2331,17 @@ body {
   padding: 22px 70px;
   border: none;
   border-radius: 4px;
-  margin: 0 auto 0 auto;
   cursor: pointer;
-  margin-bottom: 0;
-  margin-top: 0;
-  transition: background 0.2s;
-  letter-spacing: 1px;
-  box-shadow: 0 2px 8px rgba(255,214,0,0.10);
-  text-transform: uppercase;
-  display: block;
-}
-.prefooter-btn-lote {
-  color: #fff;
-  background: #ffd600;
-  font-weight: 700;
-  font-size: 1.5rem;
-  border-radius: 2px;
-  border: none;
-  box-shadow: 0 2px 8px rgba(255,214,0,0.10);
+  transition: all 0.3s ease;
   text-transform: uppercase;
   letter-spacing: 1px;
-  transition: background 0.2s;
+  box-shadow: 0 2px 8px rgba(255,214,0,0.15);
 }
 .prefooter-btn-lote:hover {
   background: #ffe066;
   color: #ff3c22;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255,214,0,0.25);
 }
 .prefooter-politica {
   color: #fff;
@@ -2249,11 +2361,13 @@ body {
 }
 @media (max-width: 700px) {
   .prefooter-vermelho {
-    padding: 40px 0 40px 0;
+    padding: 40px 0;
   }
   .prefooter-btn-lote {
-    font-size: 1.05rem;
-    padding: 14px 18px;
+    font-size: 1.1rem;
+    padding: 16px 24px;
+    width: 90%;
+    max-width: 340px;
   }
   .prefooter-politica {
     font-size: 0.9rem;
@@ -2266,7 +2380,7 @@ body {
 @media (max-width: 700px) {
   /* PATROCINADORES */
   .patrocinadores-section {
-    padding: 28px 0 18px 0;
+    padding: 36px 0 24px 0;
   }
   .patrocinadores-title {
     font-size: 1.2rem;
@@ -2369,3 +2483,682 @@ body {
     text-align: center;
   }
 }
+
+/* ===== ANIMAÇÕES MODERNAS ===== */
+.animated {
+  opacity: 0;
+  transform: translateY(40px) scale(0.98);
+  transition: opacity 0.7s cubic-bezier(.4,0,.2,1), transform 0.7s cubic-bezier(.4,0,.2,1);
+  will-change: opacity, transform;
+}
+.animated.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Cascata para patrocinadores */
+.patro-logo-item.animated {
+  transition-delay: var(--delay, 0ms);
+}
+
+/* Hover cards e botões */
+.ingresso-card:hover, .ingresso-card-pix:hover, .patro-logo-item:hover {
+  transform: translateY(-6px) scale(1.04);
+  box-shadow: 0 12px 32px rgba(255,108,0,0.18), 0 2px 8px rgba(0,0,0,0.08);
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+.patro-logo-item:hover {
+  box-shadow: 0 8px 24px rgba(255,60,34,0.13), 0 2px 8px rgba(0,0,0,0.08);
+  background: #fffbe6;
+}
+
+/* Shine no botão */
+.footer-btn-lote, .prefooter-btn-lote, .ingresso-card-link, .ingresso-card-pix-link {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: box-shadow 0.2s, background 0.2s, color 0.2s;
+}
+.footer-btn-lote::after, .prefooter-btn-lote::after, .ingresso-card-link::after, .ingresso-card-pix-link::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -75%;
+  width: 50%; height: 100%;
+  background: linear-gradient(120deg, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.01) 100%);
+  transform: skewX(-25deg);
+  transition: left 0.7s cubic-bezier(.4,0,.2,1);
+  pointer-events: none;
+  z-index: 2;
+}
+.footer-btn-lote:hover::after, .prefooter-btn-lote:hover::after, .ingresso-card-link:hover::after, .ingresso-card-pix-link:hover::after {
+  left: 120%;
+}
+
+/* Footer e pré-footer fade-in */
+.footer-jornada.animated, .prefooter-vermelho.animated {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(.4,0,.2,1), transform 0.8s cubic-bezier(.4,0,.2,1);
+}
+.footer-jornada.animated.visible, .prefooter-vermelho.animated.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Suavizar transições globais */
+*, *::before, *::after {
+  transition-property: color, background, box-shadow, border, transform;
+  transition-duration: 0.2s;
+  transition-timing-function: cubic-bezier(.4,0,.2,1);
+}
+
+.local-logo {
+  max-width: 220px;
+  margin-bottom: 24px;
+  display: block;
+}
+
+.local-slider {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  min-height: 260px;
+  aspect-ratio: 4/3;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.10);
+  background: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.local-slide {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  opacity: 0;
+  transition: opacity 0.7s;
+  object-fit: cover;
+  border-radius: 12px;
+  z-index: 1;
+  pointer-events: none;
+  width: 100% !important;
+  height: 100% !important;
+  min-width: 100%;
+  min-height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+  margin: 0 auto;
+}
+.local-slide.active {
+  opacity: 1;
+  z-index: 2;
+  pointer-events: auto;
+}
+@media (max-width: 900px) {
+  .local-slider {
+    max-width: 98vw;
+    min-height: 180px;
+  }
+}
+@media (max-width: 768px) {
+  .local-slider {
+    max-width: 100vw;
+    min-height: 140px;
+    aspect-ratio: 4/3;
+  }
+  .local-logo {
+    max-width: 160px;
+    margin-bottom: 18px;
+  }
+}
+
+@media (max-width: 600px) {
+  .local-section {
+    padding: 10px 0;
+    border-radius: 6px;
+    margin: 10px 0 10px 0;
+  }
+  .local-title {
+    font-size: 1.1rem !important;
+    margin-bottom: 12px;
+    line-height: 1.2;
+  }
+  .local-title span {
+    font-size: 1.3rem !important;
+    line-height: 1.2;
+  }
+  .local-content {
+    padding: 4px 1vw;
+    border-radius: 6px;
+    gap: 10px;
+  }
+  .local-info {
+    width: 100%;
+    padding: 0 14px;
+    box-sizing: border-box;
+  }
+  .local-logo {
+    max-width: 90px;
+    display: block;
+    margin: 12px auto 12px auto;
+  }
+  .local-description,
+  .local-highlights,
+  .local-address {
+    font-size: 0.97rem !important;
+    line-height: 1.4;
+    margin-bottom: 6px;
+    padding-left: 4px;
+    padding-right: 4px;
+    text-align: left;
+  }
+  .local-link {
+    font-size: 0.95rem;
+    padding: 9px 18px;
+    margin-top: 6px;
+    border-radius: 5px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+  .local-slider {
+    min-height: 120px;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    max-width: 98vw;
+  }
+  .local-slider-indicators {
+    margin-top: 4px;
+  }
+  .local-slider-indicator {
+    width: 8px;
+    height: 8px;
+  }
+}
+
+/* ========== SEÇÃO NOVIDADES ========== */
+.novidades-section {
+  padding: 60px 0;
+  background: #f5f5f5;
+}
+
+.novidades-festa-a-fantasia {
+  padding: 60px 0;
+  margin-top: -20px;
+  background-color: #141414 !important;
+  background-image: url(https://jornadapilates.com.br/2026/wp-content/uploads/2022/08/pattern-gold.png);
+  background-repeat: repeat;
+  background-position: center center;
+  background-attachment: scroll;
+  background-size: contain;
+  position: relative;
+  width: 100%;
+}
+
+/* Remove o overlay que estava escurecendo demais */
+.novidades-festa-a-fantasia::before {
+  display: none;
+}
+
+.novidades-festa-a-fantasia .container {
+  position: relative;
+  z-index: 2;
+  background: transparent !important;
+}
+
+.novidades-festa-a-fantasia .novidade-item {
+  background: transparent !important;
+  margin-bottom: 0;
+  padding: 0;
+}
+
+.novidade-festa {
+  position: relative;
+  z-index: 2;
+  background: transparent !important;
+}
+
+.novidade-festa .festa-bg {
+  background: transparent !important;
+  padding: 0;
+}
+
+.novidade-festa .novidade-content {
+  background: transparent !important;
+  padding: 0;
+  border: none;
+  box-shadow: none;
+}
+
+.festa-title {
+  color: #ffd600 !important;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.festa-desc {
+  color: #ffffff !important;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+@media (max-width: 700px) {
+  .novidades-section {
+    padding: 40px 0;
+  }
+
+  .novidades-festa-a-fantasia {
+    padding: 40px 0;
+    margin-top: -10px;
+  }
+}
+
+.novidades-header {
+  text-align: left;
+  margin-bottom: 50px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 20px;
+}
+
+.novidades-title {
+  display: inline-block;
+  background: #EF3C2D;
+  color: #fff;
+  font-size: 2.2rem;
+  font-weight: 700;
+  padding: 8px 20px;
+  margin: 0;
+}
+
+.novidade-item {
+  margin-bottom: 60px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 20px;
+}
+
+.novidade-content {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  background: transparent;
+  padding: 0;
+  border: none;
+  box-shadow: none;
+}
+
+.novidade-image {
+  flex: 0 0 auto;
+  width: 480px;
+  max-width: 100%;
+}
+
+.novidade-image img {
+  width: 100%;
+  height: auto;
+  border: none;
+  border-radius: 0;
+  box-shadow: -10px 10px 0px 0px #f33a21;
+}
+
+.novidade-text {
+  flex: 1;
+  padding-left: 0;
+  padding-top: 20px;
+}
+
+.novidade-item-title {
+  font-size: 2.8rem;
+  color: #2c3e50;
+  margin: 0 0 25px 0;
+  font-weight: 700;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+}
+
+.novidade-description {
+  font-size: 1.3rem;
+  color: #666;
+  line-height: 1.6;
+  margin: 0;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+}
+
+@media (max-width: 768px) {
+  .novidades-section {
+    padding: 100px 0 40px 0;
+  }
+  
+  .novidades-title {
+    font-size: 1.8rem;
+    padding: 6px 16px;
+  }
+  
+  .novidade-content {
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .novidade-image {
+    width: 100%;
+    max-width: 400px;
+    align-self: center;
+  }
+  
+  .novidade-text {
+    padding-top: 0;
+    text-align: left;
+  }
+  
+  .novidade-item-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .novidade-description {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .novidades-title {
+    font-size: 1.5rem;
+    padding: 6px 12px;
+  }
+  
+  .novidade-image {
+    max-width: 100%;
+  }
+  
+  .novidade-item-title {
+    font-size: 1.7rem;
+  }
+  
+  .novidade-description {
+    font-size: 1rem;
+  }
+}
+
+/* ========== TÍTULO NOVIDADES COM TEXTURA ========== */
+.novidades-titulo-section {
+  width: 100vw;
+  min-height: 120px;
+  background: url('https://jornadapilates.com.br/2026/wp-content/uploads/2022/08/pattern-backgrounds-header.jpg') repeat-y center top;
+  background-size: auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 48px 0 32px 0;
+  margin: 0 0;
+  box-sizing: border-box;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  margin-top: 90px;
+  background-repeat: repeat-x;
+  border-bottom: 1px solid #e5e8e8;
+}
+.novidades-titulo-section .container {
+  width: 100%;
+  max-width: 1200px;
+  /* Remover flex para centralizar o container */
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+  box-sizing: border-box;
+}
+.novidades-title {
+  display: inline-block;
+  background: #EF3C2D;
+  color: #fff;
+  font-size: 2.2rem;
+  font-weight: 700;
+  padding: 8px 32px;
+  margin: 0;
+  border-radius: 2px;
+  box-shadow: none;
+  text-align: left;
+}
+@media (max-width: 700px) {
+  .novidades-titulo-section {
+    min-height: 80px;
+    padding: 28px 0 18px 0;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    margin-top: 70px;
+  }
+  .novidades-title {
+    font-size: 1.3rem;
+    padding: 6px 16px;
+  }
+}
+/* ========== FIM TÍTULO NOVIDADES ========== */
+
+/* ========== CONTAINER PADRÃO ========== */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+  box-sizing: border-box;
+}
+@media (max-width: 700px) {
+  .container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+/* ========== FIM CONTAINER PADRÃO ========== */
+
+/* ========== FESTA À FANTASIA - NOVIDADE ========== */
+.novidade-festa .festa-bg {
+  background: transparent !important;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 0;
+  padding: 60px 0 60px 0;
+  gap: 60px;
+}
+.novidade-festa .festa-text {
+  flex: 1;
+  color: #fff;
+  padding-left: 4vw;
+  padding-right: 2vw;
+}
+.festa-title {
+  color: #ffd600 !important;
+  font-size: 2.6rem;
+  font-weight: 700;
+  margin-bottom: 32px;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+.festa-desc {
+  color: #ffffff !important;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+.festa-img {
+  flex: 0 0 auto;
+  width: 480px;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.festa-img img {
+  width: 100%;
+  height: auto;
+  border: 0;
+  box-shadow: 10px 10px 0px 0px #d29c32;
+  background: #fff;
+}
+@media (max-width: 1100px) {
+  .novidade-festa .festa-bg {
+    flex-direction: column;
+    gap: 32px;
+    padding: 40px 0 40px 0;
+  }
+  .festa-img {
+    width: 100%;
+    max-width: 480px;
+  }
+  .novidade-festa .festa-text {
+    padding-left: 0;
+    padding-right: 0;
+    text-align: center;
+  }
+}
+@media (max-width: 700px) {
+  .novidade-festa .festa-bg {
+    padding: 24px 0 24px 0;
+    gap: 18px;
+  }
+  .festa-title {
+    font-size: 1.3rem;
+    margin-bottom: 16px;
+  }
+  .festa-desc {
+    font-size: 1rem;
+  }
+  .festa-img {
+    width: 100%;
+    max-width: 98vw;
+  }
+}
+/* ========== FIM FESTA À FANTASIA ========== */
+
+/* ========== JORNADA BUSINESS - NOVIDADE ========== */
+.novidades-jornada-business {
+  padding: 60px 0;
+  margin-top: -20px;
+  background-color: #d12c1d;
+  background-image: url('https://jornadapilates.com.br/2026/wp-content/uploads/2022/08/pattern-background-vermelho.png');
+  background-repeat: repeat;
+  background-position: center center;
+  background-attachment: scroll;
+  background-size: contain;
+  position: relative;
+  width: 100%;
+}
+
+.novidades-jornada-business .container {
+  position: relative;
+  z-index: 2;
+  background: transparent !important;
+}
+
+.novidades-jornada-business .novidade-item {
+  background: transparent !important;
+  margin-bottom: 0;
+  padding: 0;
+}
+
+.novidade-business {
+  position: relative;
+  z-index: 2;
+  background: transparent !important;
+}
+
+.novidade-business .business-bg {
+  background: transparent !important;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 0;
+  padding: 60px 0 60px 0;
+  gap: 60px;
+}
+
+.novidade-business .business-text {
+  flex: 1;
+  color: #fff;
+  padding-left: 4vw;
+  padding-right: 2vw;
+}
+
+.business-title {
+  color: #ffd600 !important;
+  font-size: 2.6rem;
+  font-weight: 700;
+  margin-bottom: 32px;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  text-shadow: none;
+}
+
+.business-desc {
+  color: #ffffff !important;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.business-img {
+  flex: 0 0 auto;
+  width: 480px;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.business-img img {
+  width: 100%;
+  height: auto;
+  border: 0;
+  box-shadow: 10px 10px 0px 0px #ffffff;
+  background: #fff;
+}
+
+@media (max-width: 1100px) {
+  .novidade-business .business-bg {
+    flex-direction: column;
+    gap: 32px;
+    padding: 40px 0 40px 0;
+  }
+  .business-img {
+    width: 100%;
+    max-width: 480px;
+  }
+  .novidade-business .business-text {
+    padding-left: 0;
+    padding-right: 0;
+    text-align: center;
+  }
+}
+
+@media (max-width: 700px) {
+  .novidades-jornada-business {
+    padding: 40px 0;
+    margin-top: -10px;
+  }
+  .novidade-business .business-bg {
+    padding: 24px 0 24px 0;
+    gap: 18px;
+  }
+  .business-title {
+    font-size: 1.3rem;
+    margin-bottom: 16px;
+  }
+  .business-desc {
+    font-size: 1rem;
+  }
+  .business-img {
+    width: 100%;
+    max-width: 98vw;
+  }
+}
+/* ========== FIM JORNADA BUSINESS ========== */
